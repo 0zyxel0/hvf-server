@@ -23,9 +23,6 @@
     "terrainid": {
       "type": "string"
     },
-    "week_name": {
-      "type": "string"
-    },
     "stem_harvest_week": {
       "type": "string"
     },
@@ -37,6 +34,27 @@
     },
     "year": {
       "type": "string"
+    },
+    "stems": {
+      "type": "integer"
+    },
+    "grower": {
+      "type": "string"
+    },
+    "bagging": {
+      "type": "integer"
+    },
+    "box_type_a": {
+      "type": "decimal"
+    },
+    "box_type_b": {
+      "type": "decimal"
+    },
+    "class_type_a": {
+      "type": "decimal"
+    },
+    "class_type_b": {
+      "type": "decimal"
     }
   }
 }
