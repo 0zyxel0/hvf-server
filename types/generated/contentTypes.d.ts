@@ -369,6 +369,37 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGrowerGrower extends Struct.CollectionTypeSchema {
+  collectionName: 'growers';
+  info: {
+    description: '';
+    displayName: 'Grower';
+    pluralName: 'growers';
+    singularName: 'grower';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hectars: Schema.Attribute.Decimal;
+    leadman: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::grower.grower'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHarvestDetailHarvestDetail
   extends Struct.CollectionTypeSchema {
   collectionName: 'harvest_details';
@@ -390,6 +421,7 @@ export interface ApiHarvestDetailHarvestDetail
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    enddate: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -398,6 +430,7 @@ export interface ApiHarvestDetailHarvestDetail
       Schema.Attribute.Private;
     period: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    startdate: Schema.Attribute.Date;
     stem_harvest_count: Schema.Attribute.Integer;
     stem_harvest_week: Schema.Attribute.String;
     terrainid: Schema.Attribute.String;
@@ -405,6 +438,7 @@ export interface ApiHarvestDetailHarvestDetail
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     week: Schema.Attribute.Integer;
+    year: Schema.Attribute.String;
   };
 }
 
@@ -423,6 +457,7 @@ export interface ApiHarvestHarvest extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    enddate: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -431,6 +466,7 @@ export interface ApiHarvestHarvest extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     period: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    startdate: Schema.Attribute.Date;
     stem_harvest_count: Schema.Attribute.Integer;
     stem_harvest_week: Schema.Attribute.String;
     terrainid: Schema.Attribute.String;
@@ -439,12 +475,14 @@ export interface ApiHarvestHarvest extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     week: Schema.Attribute.Integer;
     week_name: Schema.Attribute.String;
+    year: Schema.Attribute.String;
   };
 }
 
 export interface ApiRawHarvestRawHarvest extends Struct.CollectionTypeSchema {
   collectionName: 'raw_harvests';
   info: {
+    description: '';
     displayName: 'Raw Harvest';
     pluralName: 'raw-harvests';
     singularName: 'raw-harvest';
@@ -461,6 +499,7 @@ export interface ApiRawHarvestRawHarvest extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    enddate: Schema.Attribute.Date;
     grower: Schema.Attribute.String;
     hectars: Schema.Attribute.Decimal;
     leadman: Schema.Attribute.String;
@@ -472,6 +511,7 @@ export interface ApiRawHarvestRawHarvest extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     period: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    startdate: Schema.Attribute.Date;
     stem_harvest_week_10: Schema.Attribute.Integer;
     stem_harvest_week_11: Schema.Attribute.Integer;
     stem_harvest_week_12: Schema.Attribute.Integer;
@@ -486,6 +526,7 @@ export interface ApiRawHarvestRawHarvest extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     week: Schema.Attribute.Integer;
+    year: Schema.Attribute.String;
   };
 }
 
@@ -1029,6 +1070,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::grower.grower': ApiGrowerGrower;
       'api::harvest-detail.harvest-detail': ApiHarvestDetailHarvestDetail;
       'api::harvest.harvest': ApiHarvestHarvest;
       'api::raw-harvest.raw-harvest': ApiRawHarvestRawHarvest;

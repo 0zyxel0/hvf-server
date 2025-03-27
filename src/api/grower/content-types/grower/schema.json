@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "growers",
+  "info": {
+    "singularName": "grower",
+    "pluralName": "growers",
+    "displayName": "Grower",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "hectars": {
+      "type": "decimal"
+    },
+    "leadman": {
+      "type": "string"
+    }
+  }
+}

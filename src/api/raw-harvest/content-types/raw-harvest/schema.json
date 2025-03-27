@@ -4,7 +4,8 @@
   "info": {
     "singularName": "raw-harvest",
     "pluralName": "raw-harvests",
-    "displayName": "Raw Harvest"
+    "displayName": "Raw Harvest",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -69,6 +70,15 @@
     },
     "box_type_b": {
       "type": "decimal"
+    },
+    "year": {
+      "type": "string"
+    },
+    "startdate": {
+      "type": "date"
+    },
+    "enddate": {
+      "type": "date"
     }
   }
 }

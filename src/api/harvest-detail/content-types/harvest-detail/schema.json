@@ -40,6 +40,15 @@
     },
     "stem_harvest_week": {
       "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "startdate": {
+      "type": "date"
+    },
+    "enddate": {
+      "type": "date"
     }
   }
 }
