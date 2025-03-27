@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "harvests",
+  "info": {
+    "singularName": "harvest",
+    "pluralName": "harvests",
+    "displayName": "Harvest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "period": {
+      "type": "integer"
+    },
+    "week": {
+      "type": "integer"
+    },
+    "stem_harvest_count": {
+      "type": "integer"
+    },
+    "terrainid": {
+      "type": "string"
+    },
+    "week_name": {
+      "type": "string"
+    },
+    "stem_harvest_week": {
+      "type": "string"
+    }
+  }
+}

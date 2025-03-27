@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "terrains",
+  "info": {
+    "singularName": "terrain",
+    "pluralName": "terrains",
+    "displayName": "Terrain"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "terrainid": {
+      "type": "string"
+    },
+    "grower": {
+      "type": "string"
+    },
+    "leadman": {
+      "type": "string"
+    },
+    "hectars": {
+      "type": "decimal"
+    }
+  }
+}
