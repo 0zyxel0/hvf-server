@@ -369,37 +369,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiGrowerGrower extends Struct.CollectionTypeSchema {
-  collectionName: 'growers';
-  info: {
-    description: '';
-    displayName: 'Grower';
-    pluralName: 'growers';
-    singularName: 'grower';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    hectars: Schema.Attribute.Decimal;
-    leadman: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::grower.grower'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHarvestHarvest extends Struct.CollectionTypeSchema {
   collectionName: 'harvests';
   info: {
@@ -1034,7 +1003,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::grower.grower': ApiGrowerGrower;
       'api::harvest.harvest': ApiHarvestHarvest;
       'api::raw-harvest.raw-harvest': ApiRawHarvestRawHarvest;
       'api::terrain.terrain': ApiTerrainTerrain;
