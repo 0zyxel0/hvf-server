@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manufacturing_wastes",
+  "info": {
+    "singularName": "manufacturing-waste",
+    "pluralName": "manufacturing-wastes",
+    "displayName": "Manufacturing Waste"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "grower": {
+      "type": "string"
+    },
+    "sample_amount": {
+      "type": "decimal"
+    },
+    "gross_weight": {
+      "type": "decimal"
+    },
+    "broken_feeder_line": {
+      "type": "decimal"
+    },
+    "clustering_waste": {
+      "type": "decimal"
+    },
+    "fresh_bruise_scar": {
+      "type": "decimal"
+    },
+    "fresh_knife_cut": {
+      "type": "decimal"
+    },
+    "fresh_latex": {
+      "type": "decimal"
+    },
+    "full_grade": {
+      "type": "decimal"
+    },
+    "fresh_point_scar": {
+      "type": "decimal"
+    },
+    "mechanical_damage": {
+      "type": "decimal"
+    },
+    "under_calibration": {
+      "type": "decimal"
+    },
+    "under_weight_calibration": {
+      "type": "decimal"
+    },
+    "over_calibration": {
+      "type": "decimal"
+    },
+    "over_cal": {
+      "type": "decimal"
+    },
+    "year": {
+      "type": "string"
+    },
+    "period": {
+      "type": "integer"
+    },
+    "week": {
+      "type": "integer"
+    },
+    "startdate": {
+      "type": "date"
+    },
+    "enddate": {
+      "type": "date"
+    }
+  }
+}
