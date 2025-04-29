@@ -1,0 +1,269 @@
+{
+  "kind": "collectionType",
+  "collectionName": "raw_banana_garden_wastes",
+  "info": {
+    "singularName": "raw-banana-garden-waste",
+    "pluralName": "raw-banana-garden-wastes",
+    "displayName": "Raw Banana Garden Waste",
+     "description": "The data provided in this table will be using kilograms for most values except the no_of_sample which are integers representing stem count."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "grower": {
+      "type": "string",
+      "required": false,
+      "maxLength": 255,
+      "displayName": "Grower"
+    },
+    "no_of_sample": {
+      "type": "integer",
+      "required": false,
+      "displayName": "Number of Samples"
+    },
+    "gross_weight": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Gross Weight"
+    },
+    "animal_damage": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Animal Damage"
+    },
+    "caterpillar_damage": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Caterpillar Damage"
+    },
+    "chemical_burn": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Chemical Burn"
+    },
+    "chemical_residue": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Chemical Residue"
+    },
+    "chimera": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Chimera"
+    },
+    "cigarette_tip_rot": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Cigarette Tip Rot"
+    },
+    "dust_bruise": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Dust Bruise"
+    },
+    "false_finger": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "False Finger"
+    },
+    "finger_rot_dry": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Finger Rot Dry"
+    },
+     "hermitia": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Hermitia"
+    },
+    "insect_damage": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Insect Damage"
+    },
+    "leaf_scar": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Leaf Scar"
+    },
+    "malformed_hand": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Malformed Hand"
+    },
+    "maturity_stain": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Maturity Stain"
+    },
+    "mealy_bug": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Mealy Bug"
+    },
+    "old_bruise": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Old Bruise"
+    },
+    "old_knife_coop_cut": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Old Knife Coop Cut"
+    },
+    "others1": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Others 1"
+    },
+    "old_point_scar": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Old Point Scar"
+    },
+    "old_latex": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Old Latex"
+    },
+    "others2": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Others 2"
+    },
+    "finger_rot_wet": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Finger Rot Wet"
+    },
+    "phyto_wetting": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Phyto Wetting"
+    },
+    "pitmark": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Pitmark"
+    },
+    "pointed_tips": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Pointed Tips"
+    },
+    "pole_twine_damage": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Pole Twine Damage"
+    },
+    "pronounced_curvature": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Pronounced Curvature"
+    },
+    "red_rust": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Red Rust"
+    },
+    "scab": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Scab"
+    },
+    "scalding": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Scalding"
+    },
+    "scale_insect": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Scale Insect"
+    },
+    "scarring_weevil": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Scarring Weevil"
+    },
+    "single_layer": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Single Layer"
+    },
+    "sinker": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Sinker"
+    },
+    "smokey_fruit": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Smokey Fruit"
+    },
+    "sotty_mold": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Sotty Mold"
+    },
+    "speckling": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Speckling"
+    },
+    "split_finger": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Split Finger"
+    },
+    "sunburn": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Sunburn"
+    },
+    "thin_grade": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Thin Grade"
+    },
+    "twin_finger": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Twin Finger"
+    },
+    "wetting": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Wetting"
+    },
+     "wild_finger": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "Wild Finger"
+    },
+    "bs_ratio_a": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "BS Ratio A"
+    },
+    "p_class_b": {
+      "type": "decimal",
+      "required": false,
+      "displayName": "P Class B"
+    },
+    "startdate": {
+      "type": "date",
+      "required": false,
+      "displayName": "Start Date"
+    },
+    "enddate": {
+      "type": "date",
+      "required": false,
+      "displayName": "End Date"
+    }
+  }
+}
+
+
+

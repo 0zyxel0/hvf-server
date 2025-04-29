@@ -460,6 +460,88 @@ export interface ApiManufacturingWasteManufacturingWaste
   };
 }
 
+export interface ApiRawBananaGardenWasteRawBananaGardenWaste
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'raw_banana_garden_wastes';
+  info: {
+    description: 'The data provided in this table will be using kilograms for most values except the no_of_sample which are integers representing stem count.';
+    displayName: 'Raw Banana Garden Waste';
+    pluralName: 'raw-banana-garden-wastes';
+    singularName: 'raw-banana-garden-waste';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    animal_damage: Schema.Attribute.Decimal;
+    bs_ratio_a: Schema.Attribute.Decimal;
+    caterpillar_damage: Schema.Attribute.Decimal;
+    chemical_burn: Schema.Attribute.Decimal;
+    chemical_residue: Schema.Attribute.Decimal;
+    chimera: Schema.Attribute.Decimal;
+    cigarette_tip_rot: Schema.Attribute.Decimal;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dust_bruise: Schema.Attribute.Decimal;
+    enddate: Schema.Attribute.Date;
+    false_finger: Schema.Attribute.Decimal;
+    finger_rot_dry: Schema.Attribute.Decimal;
+    finger_rot_wet: Schema.Attribute.Decimal;
+    gross_weight: Schema.Attribute.Decimal;
+    grower: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    hermitia: Schema.Attribute.Decimal;
+    insect_damage: Schema.Attribute.Decimal;
+    leaf_scar: Schema.Attribute.Decimal;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::raw-banana-garden-waste.raw-banana-garden-waste'
+    > &
+      Schema.Attribute.Private;
+    malformed_hand: Schema.Attribute.Decimal;
+    maturity_stain: Schema.Attribute.Decimal;
+    mealy_bug: Schema.Attribute.Decimal;
+    no_of_sample: Schema.Attribute.Integer;
+    old_bruise: Schema.Attribute.Decimal;
+    old_knife_coop_cut: Schema.Attribute.Decimal;
+    old_latex: Schema.Attribute.Decimal;
+    old_point_scar: Schema.Attribute.Decimal;
+    others1: Schema.Attribute.Decimal;
+    others2: Schema.Attribute.Decimal;
+    p_class_b: Schema.Attribute.Decimal;
+    phyto_wetting: Schema.Attribute.Decimal;
+    pitmark: Schema.Attribute.Decimal;
+    pointed_tips: Schema.Attribute.Decimal;
+    pole_twine_damage: Schema.Attribute.Decimal;
+    pronounced_curvature: Schema.Attribute.Decimal;
+    publishedAt: Schema.Attribute.DateTime;
+    red_rust: Schema.Attribute.Decimal;
+    scab: Schema.Attribute.Decimal;
+    scalding: Schema.Attribute.Decimal;
+    scale_insect: Schema.Attribute.Decimal;
+    scarring_weevil: Schema.Attribute.Decimal;
+    single_layer: Schema.Attribute.Decimal;
+    sinker: Schema.Attribute.Decimal;
+    smokey_fruit: Schema.Attribute.Decimal;
+    sotty_mold: Schema.Attribute.Decimal;
+    speckling: Schema.Attribute.Decimal;
+    split_finger: Schema.Attribute.Decimal;
+    startdate: Schema.Attribute.Date;
+    sunburn: Schema.Attribute.Decimal;
+    thin_grade: Schema.Attribute.Decimal;
+    twin_finger: Schema.Attribute.Decimal;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    wetting: Schema.Attribute.Decimal;
+    wild_finger: Schema.Attribute.Decimal;
+  };
+}
+
 export interface ApiRawHarvestRawHarvest extends Struct.CollectionTypeSchema {
   collectionName: 'raw_harvests';
   info: {
@@ -1053,6 +1135,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::harvest.harvest': ApiHarvestHarvest;
       'api::manufacturing-waste.manufacturing-waste': ApiManufacturingWasteManufacturingWaste;
+      'api::raw-banana-garden-waste.raw-banana-garden-waste': ApiRawBananaGardenWasteRawBananaGardenWaste;
       'api::raw-harvest.raw-harvest': ApiRawHarvestRawHarvest;
       'api::terrain.terrain': ApiTerrainTerrain;
       'plugin::content-releases.release': PluginContentReleasesRelease;
