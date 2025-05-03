@@ -369,49 +369,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiHarvestHarvest extends Struct.CollectionTypeSchema {
-  collectionName: 'harvests';
-  info: {
-    description: '';
-    displayName: 'Harvest';
-    pluralName: 'harvests';
-    singularName: 'harvest';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    bagging: Schema.Attribute.Integer;
-    box_type_a: Schema.Attribute.Decimal;
-    box_type_b: Schema.Attribute.Decimal;
-    class_type_a: Schema.Attribute.Decimal;
-    class_type_b: Schema.Attribute.Decimal;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    enddate: Schema.Attribute.Date;
-    grower: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::harvest.harvest'
-    > &
-      Schema.Attribute.Private;
-    period: Schema.Attribute.Integer;
-    publishedAt: Schema.Attribute.DateTime;
-    startdate: Schema.Attribute.Date;
-    stem_harvest_count: Schema.Attribute.Integer;
-    stem_harvest_week: Schema.Attribute.String;
-    stems: Schema.Attribute.Integer;
-    terrainid: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    week: Schema.Attribute.Integer;
-    year: Schema.Attribute.String;
-  };
-}
-
 export interface ApiRawBananaGardenWasteRawBananaGardenWaste
   extends Struct.CollectionTypeSchema {
   collectionName: 'raw_banana_garden_wastes';
@@ -491,6 +448,96 @@ export interface ApiRawBananaGardenWasteRawBananaGardenWaste
       Schema.Attribute.Private;
     wetting: Schema.Attribute.Decimal;
     wild_finger: Schema.Attribute.Decimal;
+  };
+}
+
+export interface ApiRawHarvestRawHarvest extends Struct.CollectionTypeSchema {
+  collectionName: 'raw_harvests';
+  info: {
+    displayName: 'Raw Harvest';
+    pluralName: 'raw-harvests';
+    singularName: 'raw-harvest';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    bagging: Schema.Attribute.Integer;
+    box_type_a: Schema.Attribute.Decimal;
+    box_type_b: Schema.Attribute.Decimal;
+    class_type_a: Schema.Attribute.Decimal;
+    class_type_b: Schema.Attribute.Decimal;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enddate: Schema.Attribute.Date;
+    grower: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::raw-harvest.raw-harvest'
+    > &
+      Schema.Attribute.Private;
+    period: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    startdate: Schema.Attribute.Date;
+    stem_harvest_count: Schema.Attribute.Integer;
+    stem_harvest_week: Schema.Attribute.String;
+    stems: Schema.Attribute.Integer;
+    terrainid: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    week: Schema.Attribute.Integer;
+    year: Schema.Attribute.String;
+  };
+}
+
+export interface ApiRawManufacturingWasteRawManufacturingWaste
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'raw_manufacturing_wastes';
+  info: {
+    displayName: 'Raw Manufacturing Waste';
+    pluralName: 'raw-manufacturing-wastes';
+    singularName: 'raw-manufacturing-waste';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    broken_feeder_line: Schema.Attribute.Decimal;
+    clustering_waste: Schema.Attribute.Decimal;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    enddate: Schema.Attribute.Date;
+    fresh_bruise_scar: Schema.Attribute.Decimal;
+    fresh_knife_cut: Schema.Attribute.Decimal;
+    fresh_latex: Schema.Attribute.Decimal;
+    fresh_point_scar: Schema.Attribute.Decimal;
+    full_grade: Schema.Attribute.Decimal;
+    gross_weight: Schema.Attribute.Decimal;
+    grower: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::raw-manufacturing-waste.raw-manufacturing-waste'
+    > &
+      Schema.Attribute.Private;
+    mechanical_damage: Schema.Attribute.Decimal;
+    over_cal: Schema.Attribute.Decimal;
+    over_calibration: Schema.Attribute.Decimal;
+    period: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    sample_amount: Schema.Attribute.Decimal;
+    startdate: Schema.Attribute.Date;
+    under_calibration: Schema.Attribute.Decimal;
+    under_weight_calibration: Schema.Attribute.Decimal;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    week: Schema.Attribute.Integer;
+    year: Schema.Attribute.String;
   };
 }
 
@@ -1034,8 +1081,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::harvest.harvest': ApiHarvestHarvest;
       'api::raw-banana-garden-waste.raw-banana-garden-waste': ApiRawBananaGardenWasteRawBananaGardenWaste;
+      'api::raw-harvest.raw-harvest': ApiRawHarvestRawHarvest;
+      'api::raw-manufacturing-waste.raw-manufacturing-waste': ApiRawManufacturingWasteRawManufacturingWaste;
       'api::terrain.terrain': ApiTerrainTerrain;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "harvests",
+  "collectionName": "raw_harvests",
   "info": {
-    "singularName": "harvest",
-    "pluralName": "harvests",
-    "displayName": "Harvest",
-    "description": ""
+    "singularName": "raw-harvest",
+    "pluralName": "raw-harvests",
+    "displayName": "Raw Harvest"
   },
   "options": {
     "draftAndPublish": false
