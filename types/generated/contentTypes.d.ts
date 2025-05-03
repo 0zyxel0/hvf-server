@@ -412,54 +412,6 @@ export interface ApiHarvestHarvest extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiManufacturingWasteManufacturingWaste
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'manufacturing_wastes';
-  info: {
-    displayName: 'Manufacturing Waste';
-    pluralName: 'manufacturing-wastes';
-    singularName: 'manufacturing-waste';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    broken_feeder_line: Schema.Attribute.Decimal;
-    clustering_waste: Schema.Attribute.Decimal;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    enddate: Schema.Attribute.Date;
-    fresh_bruise_scar: Schema.Attribute.Decimal;
-    fresh_knife_cut: Schema.Attribute.Decimal;
-    fresh_latex: Schema.Attribute.Decimal;
-    fresh_point_scar: Schema.Attribute.Decimal;
-    full_grade: Schema.Attribute.Decimal;
-    gross_weight: Schema.Attribute.Decimal;
-    grower: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::manufacturing-waste.manufacturing-waste'
-    > &
-      Schema.Attribute.Private;
-    mechanical_damage: Schema.Attribute.Decimal;
-    over_cal: Schema.Attribute.Decimal;
-    over_calibration: Schema.Attribute.Decimal;
-    period: Schema.Attribute.Integer;
-    publishedAt: Schema.Attribute.DateTime;
-    sample_amount: Schema.Attribute.Decimal;
-    startdate: Schema.Attribute.Date;
-    under_calibration: Schema.Attribute.Decimal;
-    under_weight_calibration: Schema.Attribute.Decimal;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    week: Schema.Attribute.Integer;
-    year: Schema.Attribute.String;
-  };
-}
-
 export interface ApiRawBananaGardenWasteRawBananaGardenWaste
   extends Struct.CollectionTypeSchema {
   collectionName: 'raw_banana_garden_wastes';
@@ -539,57 +491,6 @@ export interface ApiRawBananaGardenWasteRawBananaGardenWaste
       Schema.Attribute.Private;
     wetting: Schema.Attribute.Decimal;
     wild_finger: Schema.Attribute.Decimal;
-  };
-}
-
-export interface ApiRawHarvestRawHarvest extends Struct.CollectionTypeSchema {
-  collectionName: 'raw_harvests';
-  info: {
-    description: '';
-    displayName: 'Raw Harvest';
-    pluralName: 'raw-harvests';
-    singularName: 'raw-harvest';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    bagging: Schema.Attribute.Integer;
-    box_type_a: Schema.Attribute.Decimal;
-    box_type_b: Schema.Attribute.Decimal;
-    class_type_a: Schema.Attribute.Decimal;
-    class_type_b: Schema.Attribute.Decimal;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    enddate: Schema.Attribute.Date;
-    grower: Schema.Attribute.String;
-    hectars: Schema.Attribute.Decimal;
-    leadman: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::raw-harvest.raw-harvest'
-    > &
-      Schema.Attribute.Private;
-    period: Schema.Attribute.Integer;
-    publishedAt: Schema.Attribute.DateTime;
-    startdate: Schema.Attribute.Date;
-    stem_harvest_week_10: Schema.Attribute.Integer;
-    stem_harvest_week_11: Schema.Attribute.Integer;
-    stem_harvest_week_12: Schema.Attribute.Integer;
-    stem_harvest_week_13: Schema.Attribute.Integer;
-    stem_harvest_week_14: Schema.Attribute.Integer;
-    stem_harvest_week_15: Schema.Attribute.Integer;
-    stem_harvest_week_16: Schema.Attribute.Integer;
-    stem_harvest_week_17: Schema.Attribute.Integer;
-    stems_total: Schema.Attribute.Integer;
-    terrainid: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    week: Schema.Attribute.Integer;
-    year: Schema.Attribute.String;
   };
 }
 
@@ -1134,9 +1035,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::harvest.harvest': ApiHarvestHarvest;
-      'api::manufacturing-waste.manufacturing-waste': ApiManufacturingWasteManufacturingWaste;
       'api::raw-banana-garden-waste.raw-banana-garden-waste': ApiRawBananaGardenWasteRawBananaGardenWaste;
-      'api::raw-harvest.raw-harvest': ApiRawHarvestRawHarvest;
       'api::terrain.terrain': ApiTerrainTerrain;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
