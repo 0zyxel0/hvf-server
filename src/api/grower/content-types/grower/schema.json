@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "growers",
+  "info": {
+    "singularName": "grower",
+    "pluralName": "growers",
+    "displayName": "Grower",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "grower_name": {
+      "type": "string"
+    },
+    "terrain": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::terrain.terrain",
+      "mappedBy": "grower"
+    },
+    "grower_alias": {
+      "type": "json"
+    }
+  }
+}

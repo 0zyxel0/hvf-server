@@ -369,6 +369,37 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGrowerGrower extends Struct.CollectionTypeSchema {
+  collectionName: 'growers';
+  info: {
+    description: '';
+    displayName: 'Grower';
+    pluralName: 'growers';
+    singularName: 'grower';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    grower_alias: Schema.Attribute.JSON;
+    grower_name: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::grower.grower'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    terrain: Schema.Attribute.Relation<'oneToOne', 'api::terrain.terrain'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiRawBananaGardenWasteRawBananaGardenWaste
   extends Struct.CollectionTypeSchema {
   collectionName: 'raw_banana_garden_wastes';
@@ -544,6 +575,7 @@ export interface ApiRawManufacturingWasteRawManufacturingWaste
 export interface ApiTerrainTerrain extends Struct.CollectionTypeSchema {
   collectionName: 'terrains';
   info: {
+    description: '';
     displayName: 'Terrain';
     pluralName: 'terrains';
     singularName: 'terrain';
@@ -555,9 +587,8 @@ export interface ApiTerrainTerrain extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    grower: Schema.Attribute.String;
+    grower: Schema.Attribute.Relation<'oneToOne', 'api::grower.grower'>;
     hectars: Schema.Attribute.Decimal;
-    leadman: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -565,6 +596,7 @@ export interface ApiTerrainTerrain extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    terrain_name: Schema.Attribute.String;
     terrainid: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1081,6 +1113,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::grower.grower': ApiGrowerGrower;
       'api::raw-banana-garden-waste.raw-banana-garden-waste': ApiRawBananaGardenWasteRawBananaGardenWaste;
       'api::raw-harvest.raw-harvest': ApiRawHarvestRawHarvest;
       'api::raw-manufacturing-waste.raw-manufacturing-waste': ApiRawManufacturingWasteRawManufacturingWaste;

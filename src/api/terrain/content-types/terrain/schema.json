@@ -4,7 +4,8 @@
   "info": {
     "singularName": "terrain",
     "pluralName": "terrains",
-    "displayName": "Terrain"
+    "displayName": "Terrain",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -13,14 +14,17 @@
     "terrainid": {
       "type": "string"
     },
-    "grower": {
-      "type": "string"
-    },
-    "leadman": {
-      "type": "string"
-    },
     "hectars": {
       "type": "decimal"
+    },
+    "terrain_name": {
+      "type": "string"
+    },
+    "grower": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::grower.grower",
+      "inversedBy": "terrain"
     }
   }
 }
